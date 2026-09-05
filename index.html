@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0d4b5c">
+
+
+    <meta
+        name="description"
+        content="Community Resource Finder helps Arizona residents find food, housing, healthcare, jobs, education, transportation, and utility resources."
+    >
+
+
+    <title>Community Resource Finder</title>
+
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header class="hero" id="top">
+
+
+        <nav class="navbar container" aria-label="Main navigation">
+
+
+            <a
+                href="#top"
+                class="logo"
+                aria-label="Community Resource Finder home"
+            >
+                <span class="logo-icon" aria-hidden="true">+</span>
+                <span>Community Resource Finder</span>
+            </a>
+
+
+            <button
+                type="button"
+                class="language-button"
+                id="languageButton"
+                onclick="toggleLanguage()"
+                aria-label="Switch language"
+            >
+                Español
+            </button>
+
+
+        </nav>
+
+
+
+
+        <div class="hero-content container">
+
+
+            <div class="hero-copy">
+
+
+                <p
+                    class="eyebrow"
+                    data-en="COMMUNITY SUPPORT • ARIZONA"
+                    data-es="APOYO COMUNITARIO • ARIZONA"
+                >
+                    COMMUNITY SUPPORT • ARIZONA
+                </p>
+
+
+                <h1
+                    data-en="Find the help you need."
+                    data-es="Encuentra la ayuda que necesitas."
+                >
+                    Find the help you need.
+                </h1>
+
+
+                <p
+                    class="hero-subtitle"
+                    data-en="A simple place to find food, healthcare, housing, jobs, education, transportation, and utility assistance."
+                    data-es="Un lugar sencillo para encontrar alimentos, atención médica, vivienda, empleo, educación, transporte y ayuda con servicios públicos."
+                >
+                    A simple place to find food, healthcare, housing, jobs,
+                    education, transportation, and utility assistance.
+                </p>
+
+
+
+
+                <!-- ZIP SEARCH -->
+                <div class="search-panel">
+
+
+                    <div class="location-search">
+
+
+                        <div class="input-wrap">
+                            <span aria-hidden="true">⌖</span>
+
+
+                            <label for="zipCode" class="sr-only">
+                                ZIP code
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="zipCode"
+                                maxlength="5"
+                                inputmode="numeric"
+                                autocomplete="postal-code"
+                                placeholder="Enter ZIP code"
+                                aria-label="ZIP code"
+                            >
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="primary-button"
+                            id="locationButton"
+                            onclick="findByZip()"
+                            data-en="Find Resources"
+                            data-es="Buscar recursos"
+                        >
+                            Find Resources
+                        </button>
+
+
+                    </div>
+
+
+                    <p
+                        class="zip-note"
+                        data-en="Enter a ZIP code to show resources serving your ZIP area. Turn on statewide resources if you also want Arizona-wide programs."
+                        data-es="Ingresa un código postal para mostrar recursos que sirven a tu área. Activa los recursos estatales si también quieres programas de todo Arizona."
+                    >
+                        Enter a ZIP code to prioritize nearby resources.
+                        Statewide resources will remain available.
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+            <!-- DIRECTORY STATS -->
+            <div
+                class="hero-stats"
+                aria-label="Directory statistics"
+            >
+
+
+                <div>
+                    <strong id="totalResources">200</strong>
+                    <span
+                        data-en="resources"
+                        data-es="recursos"
+                    >
+                        resources
+                    </span>
+                </div>
+
+
+                <div>
+                    <strong>7</strong>
+                    <span
+                        data-en="categories"
+                        data-es="categorías"
+                    >
+                        categories
+                    </span>
+                </div>
+
+
+                <div>
+                    <strong>EN / ES</strong>
+                    <span
+                        data-en="bilingual"
+                        data-es="bilingüe"
+                    >
+                        bilingual
+                    </span>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </header>
+
+
+
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+    <main>
+
+
+        <!-- =========================
+             RESOURCE DIRECTORY
+        ========================== -->
+        
+    <section class="impact-section" id="impact">
+        <div class="container">
+            <div class="impact-heading">
+                <span class="section-kicker">OUR IMPACT</span>
+                <h2>Built to connect Phoenix-area families with essential resources.</h2>
+                <p>
+                    One place to search for food, housing, healthcare, jobs, education,
+                    transportation, and utility assistance.
+                </p>
+            </div>
+
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">200+</div>
+                    <div class="impact-label">Community Resources</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-number">7</div>
+                    <div class="impact-label">Resource Categories</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-number">2</div>
+                    <div class="impact-label">Languages Supported</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section
+            class="directory-section"
+            id="directory">
+
+
+            <div class="container">
+
+
+                <div class="section-heading">
+
+
+                    <div>
+
+
+                        <p
+                            class="section-kicker"
+                            data-en="RESOURCE DIRECTORY"
+                            data-es="DIRECTORIO DE RECURSOS"
+                        >
+                            RESOURCE DIRECTORY
+                        </p>
+
+
+                        <h2
+                            data-en="Explore support near you"
+                            data-es="Explora apoyo cerca de ti"
+                        >
+                            Explore support near you
+                        </h2>
+
+
+                    </div>
+
+
+                    <p
+                        data-en="Search by organization, service, or need."
+                        data-es="Busca por organización, servicio o necesidad."
+                    >
+                        Search by organization, service, or need.
+                    </p>
+
+
+                </div>
+
+
+
+
+                <!-- =========================
+                     SEARCH + FILTERS
+                ========================== -->
+                <div class="toolbar">
+
+
+                    <!-- SEARCH -->
+                    <div class="search-box">
+
+
+                        <span aria-hidden="true">⌕</span>
+
+
+                        <label
+                            for="search"
+                            class="sr-only"
+                        >
+                            Search resources
+                        </label>
+
+
+                        <input
+                            type="search"
+                            id="search"
+                            placeholder="Search resources..."
+                            data-placeholder-en="Search resources..."
+                            data-placeholder-es="Buscar recursos..."
+                            autocomplete="off"
+                            oninput="renderResources()"
+                        >
+
+
+                    </div>
+
+
+
+
+                    <!-- CATEGORY FILTERS -->
+                    <div
+                        class="categories"
+                        role="group"
+                        aria-label="Resource categories"
+                    >
+
+
+                        <button
+                            type="button"
+                            class="category-button active"
+                            onclick="setCategory('all', this)"
+                            data-en="All"
+                            data-es="Todos"
+                        >
+                            All
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="category-button"
+                            onclick="setCategory('food', this)"
+                            data-en="Food"
+                            data-es="Alimentos"
+                        >
+                            Food
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="category-button"
+                            onclick="setCategory('housing', this)"
+                            data-en="Housing"
+                            data-es="Vivienda"
+                        >
+                            Housing
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="category-button"
+                            onclick="setCategory('healthcare', this)"
+                            data-en="Healthcare"
+                            data-es="Salud"
+                        >
+                            Healthcare
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="category-button"
+                            onclick="setCategory('jobs', this)"
+                            data-en="Jobs"
+                            data-es="Empleo"
+                        >
+                            Jobs
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="category-button"
+                            onclick="setCategory('education', this)"
+                            data-en="Education"
+                            data-es="Educación"
+                        >
+                            Education
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="category-button"
+                            onclick="setCategory('transportation', this)"
+                            data-en="Transportation"
+                            data-es="Transporte"
+                        >
+                            Transportation
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="category-button"
+                            onclick="setCategory('utilities', this)"
+                            data-en="Utilities"
+                            data-es="Servicios"
+                        >
+                            Utilities
+                        </button>
+
+
+                    </div>
+
+
+
+
+                    <!-- EXTRA FILTERS -->
+                    <div class="filters">
+
+
+                        <label class="checkbox-label">
+
+
+                            <input
+                                type="checkbox"
+                                id="freeFilter"
+                                onchange="renderResources()"
+                            >
+
+
+                            <span
+                                data-en="Free or low-cost only"
+                                data-es="Solo gratis o de bajo costo"
+                            >
+                                Free or low-cost only
+                            </span>
+
+
+                        </label>
+
+
+
+
+                        <label class="checkbox-label">
+
+
+                            <input
+                                type="checkbox"
+                                id="spanishFilter"
+                                onchange="renderResources()"
+                            >
+
+
+                            <span
+                                data-en="Spanish available"
+                                data-es="Español disponible"
+                            >
+                                Spanish available
+                            </span>
+
+
+                        </label>
+
+
+                        <label class="checkbox-label">
+                            <input
+                                type="checkbox"
+                                id="statewideFilter"
+                                onchange="renderResources()"
+                            >
+                            <span
+                                data-en="Include statewide resources"
+                                data-es="Incluir recursos estatales"
+                            >
+                                Include statewide resources
+                            </span>
+                        </label>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+                <!-- =========================
+                     RESULTS HEADER
+                ========================== -->
+                <div class="results-header">
+
+
+                    <p
+                        id="resultCount"
+                        role="status"
+                        aria-live="polite"
+                    ></p>
+
+
+                    <button
+                        type="button"
+                        class="clear-button"
+                        onclick="clearFilters()"
+                        data-en="Clear filters"
+                        data-es="Borrar filtros"
+                    >
+                        Clear filters
+                    </button>
+
+
+                </div>
+
+
+
+
+                <!-- ZIP STATUS MESSAGE -->
+                <div
+                    id="zipMessage"
+                    class="zip-message"
+                    role="status"
+                    aria-live="polite"
+                ></div>
+
+
+
+
+                <!-- =========================
+                     RESOURCE CARDS
+                ========================== -->
+                <div
+                    id="resources"
+                    class="resource-grid"
+                    aria-live="polite"
+                ></div>
+
+
+
+
+                <!-- =========================
+                     NO RESULTS
+                ========================== -->
+                <div
+                    id="noResults"
+                    class="no-results hidden"
+                    role="status"
+                >
+
+
+                    <div
+                        class="no-results-icon"
+                        aria-hidden="true"
+                    >
+                        ⌕
+                    </div>
+
+
+                    <h2
+                        data-en="No resources found"
+                        data-es="No se encontraron recursos"
+                    >
+                        No resources found
+                    </h2>
+
+
+                    <p
+                        data-en="Try changing your search or removing some filters."
+                        data-es="Intenta cambiar tu búsqueda o eliminar algunos filtros."
+                    >
+                        Try changing your search or removing some filters.
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+
+        <!-- =========================
+             HELP SECTION
+        ========================== -->
+        <section class="help-section">
+
+
+            <div class="container">
+
+
+                <div class="help-card">
+
+
+                    <div
+                        class="help-icon"
+                        aria-hidden="true"
+                    >
+                        ?
+                    </div>
+
+
+
+
+                    <div class="help-text">
+
+
+                        <p
+                            class="section-kicker"
+                            data-en="NEED A STARTING POINT?"
+                            data-es="¿NECESITAS UN PUNTO DE PARTIDA?"
+                        >
+                            NEED A STARTING POINT?
+                        </p>
+
+
+                        <h2
+                            data-en="Not sure where to start?"
+                            data-es="¿No sabes por dónde empezar?"
+                        >
+                            Not sure where to start?
+                        </h2>
+
+
+                        <p
+                            data-en="Answer one simple question and we'll take you to the right category."
+                            data-es="Responde una pregunta sencilla y te llevaremos a la categoría adecuada."
+                        >
+                            Answer one simple question and we'll take you
+                            to the right category.
+                        </p>
+
+
+                    </div>
+
+
+
+
+                    <button
+                        type="button"
+                        class="help-button"
+                        onclick="openHelper()"
+                        data-en="Help me find resources"
+                        data-es="Ayúdame a encontrar recursos"
+                    >
+                        Help me find resources
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+
+
+
+    <!-- =========================
+         HELPER MODAL
+    ========================== -->
+    <div
+        id="helperModal"
+        class="modal hidden"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="helperTitle"
+    >
+
+
+        <div class="modal-content">
+
+
+            <button
+                type="button"
+                class="modal-close"
+                onclick="closeHelper()"
+                aria-label="Close"
+            >
+                ×
+            </button>
+
+
+
+
+            <p
+                class="section-kicker"
+                data-en="QUICK FIND"
+                data-es="BÚSQUEDA RÁPIDA"
+            >
+                QUICK FIND
+            </p>
+
+
+
+
+            <h2
+                id="helperTitle"
+                data-en="What kind of help do you need?"
+                data-es="¿Qué tipo de ayuda necesitas?"
+            >
+                What kind of help do you need?
+            </h2>
+
+
+
+
+            <p
+                data-en="Choose a category to see resources that may help."
+                data-es="Elige una categoría para ver los recursos que pueden ayudarte."
+            >
+                Choose a category to see resources that may help.
+            </p>
+
+
+
+
+            <div class="helper-options">
+
+
+                <button
+                    type="button"
+                    onclick="helperCategory('food')"
+                >
+                    <span aria-hidden="true">🍎</span>
+                    <span
+                        data-en="Food"
+                        data-es="Alimentos"
+                    >
+                        Food
+                    </span>
+                </button>
+
+
+
+
+                <button
+                    type="button"
+                    onclick="helperCategory('housing')"
+                >
+                    <span aria-hidden="true">🏠</span>
+                    <span
+                        data-en="Housing"
+                        data-es="Vivienda"
+                    >
+                        Housing
+                    </span>
+                </button>
+
+
+
+
+                <button
+                    type="button"
+                    onclick="helperCategory('healthcare')"
+                >
+                    <span aria-hidden="true">❤</span>
+                    <span
+                        data-en="Healthcare"
+                        data-es="Salud"
+                    >
+                        Healthcare
+                    </span>
+                </button>
+
+
+
+
+                <button
+                    type="button"
+                    onclick="helperCategory('jobs')"
+                >
+                    <span aria-hidden="true">💼</span>
+                    <span
+                        data-en="Jobs"
+                        data-es="Empleo"
+                    >
+                        Jobs
+                    </span>
+                </button>
+
+
+
+
+                <button
+                    type="button"
+                    onclick="helperCategory('education')"
+                >
+                    <span aria-hidden="true">📚</span>
+                    <span
+                        data-en="Education"
+                        data-es="Educación"
+                    >
+                        Education
+                    </span>
+                </button>
+
+
+
+
+                <button
+                    type="button"
+                    onclick="helperCategory('transportation')"
+                >
+                    <span aria-hidden="true">🚌</span>
+                    <span
+                        data-en="Transportation"
+                        data-es="Transporte"
+                    >
+                        Transportation
+                    </span>
+                </button>
+
+
+
+
+                <button
+                    type="button"
+                    onclick="helperCategory('utilities')"
+                >
+                    <span aria-hidden="true">💡</span>
+                    <span
+                        data-en="Utilities"
+                        data-es="Servicios"
+                    >
+                        Utilities
+                    </span>
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer>
+
+
+        <div class="container">
+
+
+            <div class="footer-content">
+
+
+                <div>
+
+
+                    <h3>
+                        Community Resource Finder
+                    </h3>
+
+
+                    <p
+                        data-en="Connecting people with community resources across Arizona."
+                        data-es="Conectando a las personas con recursos comunitarios en Arizona."
+                    >
+                        Connecting people with community resources across Arizona.
+                    </p>
+
+
+                </div>
+
+
+
+
+                <div class="footer-note">
+
+
+                    <p
+                        data-en="Information can change. Always contact the organization before visiting to confirm eligibility, hours, services, and availability."
+                        data-es="La información puede cambiar. Comunícate con la organización antes de visitar para confirmar requisitos, horarios, servicios y disponibilidad."
+                    >
+                        Information can change. Always contact the organization
+                        before visiting to confirm eligibility, hours, services,
+                        and availability.
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+            <div class="footer-bottom">
+
+
+                <span>
+                    © 2026 Community Resource Finder
+                </span>
+
+
+                <span
+                    data-en="Built to make community resources easier to find."
+                    data-es="Creado para facilitar la búsqueda de recursos comunitarios."
+                >
+                    Built to make community resources easier to find.
+                </span>
+
+
+            </div>
+
+
+        </div>
+
+
+    </footer>
+
+
+
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+    <script src="script.js"></script>
+
+
+</body>
+</html>
+
+
+
